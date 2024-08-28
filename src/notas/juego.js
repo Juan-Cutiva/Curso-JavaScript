@@ -4,7 +4,7 @@ function i(min, max) {
 var numeroSecreto = i(0, 11);
 
 const numeroJugador = parseInt(prompt('Adivina el numero secreto entre 0 y  10'));
-console.log(numeroJugador)
+console.log(numeroJugador);
 
 function resultado() {
 	if (numeroJugador >= '0' && numeroJugador <= '10') {
@@ -15,20 +15,26 @@ function resultado() {
 			const r = 'Perdiste';
 			return r;
 		}
+	} else if (numeroJugador <= '0' || numeroJugador >= '10') {
+		const r = 'Solo se pueden ingresar numero entre el 0 y el 10, vuelve a intentar, Perdiste';
+		return r;
 	} else {
-		const r = 'El numero que ingresaste no es valido, Vuelve a intentar';
+		const r = 'Debes ingresar un numero, no letras o símbolos';
 		return r;
 	}
 }
 
-function numeroJugadorResultado(){
-    if (resultado() === 'El numero que ingresaste no es valido, Vuelve a intentar'){
-        const r = 'El numero que ingreso el jugador es incorrecto'
-        return r
-    } else if(resultado() === 'Ganaste' || resultado() === 'Perdiste'){
-        const r = `El numero Jugador es ${numeroJugador}`
-        return r
-    }
+function numeroJugadorResultado() {
+	if (resultado() === 'Debes ingresar un numero, no letras o símbolos') {
+		const r = 'El numero que ingreso el jugador es incorrecto';
+		return r;
+	} else if (resultado() === 'Solo se pueden ingresar numero entre el 0 y el 10, vuelve a intentar, Perdiste') {
+		const r = 'El numero que ingreso el jugador es incorrecto';
+		return r;
+	} else if (resultado() === 'Ganaste' || resultado() === 'Perdiste') {
+		const r = `El numero Jugador es ${numeroJugador}`;
+		return r;
+	}
 }
 
 document.querySelector('#prueba').innerHTML = `
