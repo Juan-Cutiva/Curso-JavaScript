@@ -4,7 +4,6 @@ let carro = {
 	color: 'Rojo'
 };
 let frutas = ['Manzana', 'Banano', 'Uvas'];
-console.log(frutas);
 
 function i(min, max) {
 	return Math.floor(Math.random() * (max - min) + min);
@@ -27,7 +26,6 @@ function cuadrado(){
 		return r
 	}
 }
-console.log(cuadrado())
 
 
 document.querySelector('#prueba').innerHTML = `
@@ -35,4 +33,3 @@ document.querySelector('#prueba').innerHTML = `
 <h1 class="text-red-900 text-7xl font-extrabold">${carro.marca + ' el cual tiene este modelo ' + carro.modelo + ' de un color ' + carro.color + 'en el cual se puede consumir esta fruta ' + frutas[2] + ` hola ${frutas[0]} ${resultado} ${cuadrado()}`}</h1>
 `;
 
-console.log('prueba');
