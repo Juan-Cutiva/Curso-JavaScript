@@ -57,6 +57,9 @@ function numeroJugadorResultado() {
 
 function h() {
 	const color = resultado() == 'Ganaste' ? 'bg-green-500' : 'bg-red-500';
+	botonEnviar.disabled = true;
+	botonEnviar.style.color= "#b6bbc5"
+	botonEnviar.style.backgroundColor = "#0e6077";
 	botonReiniciar.style.display = 'flex';
 	botonReiniciar.style.justifyContent = 'center';
 	document.querySelector('#result').innerHTML = `
