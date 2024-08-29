@@ -6,6 +6,15 @@ var numeroSecreto = i(0, 11);
 const numeroJugador = parseInt(prompt('Adivina el numero secreto entre 0 y  10'));
 console.log(numeroJugador);
 
+var botonEnviar = document.getElementById('enviar');
+
+botonEnviar.addEventListener('click', recibir);
+
+function recibir() {
+    var text = document.getElementById('texto').value
+    result = text
+}
+
 function resultado() {
 	if (numeroJugador >= '0' && numeroJugador <= '10') {
 		if (numeroJugador === numeroSecreto) {
@@ -28,7 +37,9 @@ function numeroJugadorResultado() {
 	if (resultado() === 'Debes ingresar un numero, no letras o símbolos') {
 		const r = 'El numero que ingreso el jugador es incorrecto';
 		return r;
-	} else if (resultado() === 'Solo se pueden ingresar numero entre el 0 y el 10, vuelve a intentar, Perdiste') {
+	} else if (
+		resultado() === 'Solo se pueden ingresar numero entre el 0 y el 10, vuelve a intentar, Perdiste'
+	) {
 		const r = 'El numero que ingreso el jugador es incorrecto';
 		return r;
 	} else if (resultado() === 'Ganaste' || resultado() === 'Perdiste') {
@@ -36,9 +47,9 @@ function numeroJugadorResultado() {
 		return r;
 	}
 }
-
 document.querySelector('#prueba').innerHTML = `
 <h1>El numero secreto es ${numeroSecreto}</h1>
 <h1>${numeroJugadorResultado()}</h1>
-<h1>${resultado()}</h1>
-`;
+<h1>${resultado()}</h1>`;
+
+
