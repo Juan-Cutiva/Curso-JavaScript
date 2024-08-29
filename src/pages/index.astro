@@ -3,8 +3,28 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
-		<input type="number" id="texto" class="bg-slate-300" min="0" max="10"/>
-		<button id="enviar">enviar</button>
+	<main class="bg-cyan-950 w-[90%] sm:w-[70%] lg:w-[35%] h-[40%] rounded-2xl shadow-2xl">
+		<div class="flex items-center justify-center w-full h-[45%] flex-col sm:flex-row">
+			<input type="number" id="texto" class="bg-slate-300 w-[50%] text-center rounded-lg font-semibold text-sky-950 placeholder:text-sky-950 placeholder:font-semibold sm:placeholder:pl-[10%]" min="0" max="10" placeholder="numero de 0 a 10" />
+			<button id="enviar" class="sm:ml-8 bg-blue-950 w-[5rem] h-auto rounded-lg font-semibold border-[2px] border-[#0e6077] active:scale-95 duration-[120ms] mt-4 sm:mt-0">enviar</button>
+		</div>
+		<div class="flex items-center justify-center font-semibold h-[20%] relative bottom-8">
+			<button id="reiniciar" class="bg-blue-950 w-[5rem] h-auto rounded-lg font-semibold border-[2px] border-[#0e6077] active:scale-95 duration-[120ms] hidden">reiniciar</button>
+		</div>
+		<div class="h-[35%] flex items-center text-center flex-col relative bottom-8 gap-4 font-semibold" id="result">
+		</div>
 	</main>
 </Layout>
+
+<style>
+	input {
+		border: 2px solid #0e6077;
+	}
+	input[type='number']:focus {
+		border: 2px solid #020d10;
+		outline: none;
+	}
+	main{
+		box-shadow: 11px 11px 22px #000000, -11px -11px 22px #00050e;
+	}
+</style>
