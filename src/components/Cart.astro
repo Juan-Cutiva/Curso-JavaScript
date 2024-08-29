@@ -1,0 +1,22 @@
+<a href="" class="flex h-[20vh] flex-col items-center justify-center">
+	<div class="w-[100%] h-[10.4rem] md:h-[14.5rem]" id="contenedor-img">
+		<img
+			src={Astro.props.src}
+			alt={Astro.props.alt}
+			class="mx-auto size-[100%] overflow-hidden border-[2px] border-violet-900 object-cover"
+		/>
+		<p class="mt-2 text-xl">{Astro.props.p1}</p>
+		<p class="mt-2 w-full text-sm">
+			{Astro.props.p2}
+		</p>
+	</div>
+</a>
+
+<style>
+	@media (max-width: 520px) {
+		#contenedor-img {
+			width: 22rem;
+			height: 16rem;
+		}
+	}
+</style>

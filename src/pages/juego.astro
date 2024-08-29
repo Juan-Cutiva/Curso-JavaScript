@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from "../components/Header.astro"
+---
+<Header/>
+<Layout title="Juego 0-10">
+	<h1 class="relative bottom-8 w-[85vw] text-center text-2xl font-bold text-gray-100 sm:w-[60vw]">
+		Este es un Juego en el cual tienes que adivinar un numero del <span>0</span> al <span>10</span>, compites contra la PC
+	</h1>
+	<main class="h-[40%] w-[90%] rounded-2xl bg-cyan-950 shadow-2xl sm:w-[70%] lg:w-[35%]">
+		<div class="flex h-[45%] w-full flex-col items-center justify-center sm:flex-row">
+			<input
+				type="number"
+				id="texto"
+				class="w-[50%] rounded-lg bg-slate-300 text-center font-semibold text-sky-950 placeholder:font-semibold placeholder:text-sky-950 sm:placeholder:pl-[10%]"
+				min="0"
+				max="10"
+				placeholder="numero de 0 a 10"
+			/>
+			<button
+				id="enviar"
+				class="mt-4 h-auto w-[5rem] rounded-lg border-[2px] border-[#0e6077] bg-blue-950 font-semibold duration-[120ms] active:scale-95 sm:ml-8 sm:mt-0"
+				>enviar</button
+			>
+		</div>
+		<div class="relative bottom-8 flex h-[20%] items-center justify-center font-semibold">
+			<button
+				id="reiniciar"
+				class="hidden h-auto w-[5rem] rounded-lg border-[2px] border-[#0e6077] bg-blue-950 text-[0.9rem] font-semibold duration-[120ms] active:scale-95"
+				>Reiniciar</button
+			>
+		</div>
+		<div
+			class="relative bottom-8 flex h-[35%] flex-col items-center gap-4 text-center font-semibold"
+			id="result"
+		>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	input {
+		border: 2px solid #0e6077;
+	}
+	input[type='number']:focus {
+		border: 2px solid #020d10;
+		outline: none;
+	}
+	main {
+		box-shadow:
+			11px 11px 22px #000000,
+			-11px -11px 22px #00050e;
+	}
+	span{
+		text-shadow: 0 0 4px #f3f4f6;
+	}
+</style>
