@@ -8,7 +8,7 @@ var botonReiniciar = document.getElementById('reiniciar');
 
 botonEnviar.addEventListener('click', recibir);
 botonEnviar.addEventListener('click', resultado);
-botonEnviar.addEventListener('click', h);
+botonEnviar.addEventListener('click', print);
 botonEnviar.addEventListener('click', numeroJugadorResultado);
 botonReiniciar.addEventListener('click', reiniciar);
 
@@ -61,12 +61,12 @@ function styles() {
 	botonReiniciar.style.justifyContent = 'center';
 }
 
-function h() {
+function print() {
 	if (resultado() === 'Solo se pueden ingresar numero entre el 0 y el 10, vuelve a intentar, Perdiste') {
 		styles();
 		const color = resultado() == 'Ganaste' ? 'bg-green-500' : 'bg-red-500';
 		document.querySelector('#result').innerHTML = `
-		<h1>Solo se pueden ingresar numero entre el 0 y el 10, vuelve a intentar.</h1>
+		<h1 class="w-[90%]">Solo se pueden ingresar numero entre el 0 y el 10, vuelve a intentar.</h1>
 		<h1 class='w-[30%] rounded-lg ${color}'>Perdiste</h1>`;
 	} else {
 		styles();
