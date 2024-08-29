@@ -2,19 +2,18 @@ function i(min, max) {
 	return Math.floor(Math.random() * (max - min) + min);
 }
 var numeroSecreto = i(0, 11);
-console.log(numeroSecreto);
 
 var botonEnviar = document.getElementById('enviar');
-var botonReiniciar = document.getElementById('reiniciar')
+var botonReiniciar = document.getElementById('reiniciar');
 
 botonEnviar.addEventListener('click', recibir);
 botonEnviar.addEventListener('click', resultado);
 botonEnviar.addEventListener('click', h);
 botonEnviar.addEventListener('click', numeroJugadorResultado);
-botonReiniciar.addEventListener('click', reiniciar)
+botonReiniciar.addEventListener('click', reiniciar);
 
-function reiniciar(){
-	location.reload()
+function reiniciar() {
+	location.reload();
 }
 
 function recibir() {
@@ -56,13 +55,10 @@ function numeroJugadorResultado() {
 	}
 }
 
-
 function h() {
-	const color = resultado() == "Ganaste" ? 'bg-green-500' : 'bg-red-500'
-	botonReiniciar.style.display="flex"
-	botonReiniciar.style.justifyContent="center"
-	console.log(resultado());
-	console.log(numeroJugadorResultado());
+	const color = resultado() == 'Ganaste' ? 'bg-green-500' : 'bg-red-500';
+	botonReiniciar.style.display = 'flex';
+	botonReiniciar.style.justifyContent = 'center';
 	document.querySelector('#result').innerHTML = `
 <h1>El numero secreto es ${numeroSecreto}</h1>
 <h1>${numeroJugadorResultado()}</h1>
