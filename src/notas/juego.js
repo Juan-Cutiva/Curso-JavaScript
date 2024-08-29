@@ -44,9 +44,7 @@ function numeroJugadorResultado() {
 	if (resultado() === 'Debes ingresar un numero, no letras o símbolos') {
 		const r = 'El numero que ingreso el jugador es incorrecto';
 		return r;
-	} else if (
-		resultado() === 'Solo se pueden ingresar numero entre el 0 y el 10, vuelve a intentar, Perdiste'
-	) {
+	} else if (resultado() === 'Solo se pueden ingresar numero entre el 0 y el 10, vuelve a intentar, Perdiste') {
 		const r = 'El numero que ingreso el jugador es incorrecto';
 		return r;
 	} else if (resultado() === 'Ganaste' || resultado() === 'Perdiste') {
@@ -55,15 +53,27 @@ function numeroJugadorResultado() {
 	}
 }
 
-function h() {
-	const color = resultado() == 'Ganaste' ? 'bg-green-500' : 'bg-red-500';
+function styles() {
 	botonEnviar.disabled = true;
-	botonEnviar.style.color= "#b6bbc5"
-	botonEnviar.style.backgroundColor = "#0e6077";
+	botonEnviar.style.color = '#b6bbc5';
+	botonEnviar.style.backgroundColor = '#0e6077';
 	botonReiniciar.style.display = 'flex';
 	botonReiniciar.style.justifyContent = 'center';
-	document.querySelector('#result').innerHTML = `
-<h1>El numero secreto es ${numeroSecreto}</h1>
-<h1>${numeroJugadorResultado()}</h1>
-<h1 class='w-[30%] rounded-lg ${color}'>${resultado()}</h1>`;
+}
+
+function h() {
+	if (resultado() === 'Solo se pueden ingresar numero entre el 0 y el 10, vuelve a intentar, Perdiste') {
+		styles();
+		const color = resultado() == 'Ganaste' ? 'bg-green-500' : 'bg-red-500';
+		document.querySelector('#result').innerHTML = `
+		<h1>Solo se pueden ingresar numero entre el 0 y el 10, vuelve a intentar.</h1>
+		<h1 class='w-[30%] rounded-lg ${color}'>Perdiste</h1>`;
+	} else {
+		styles();
+		const color = resultado() == 'Ganaste' ? 'bg-green-500' : 'bg-red-500';
+		document.querySelector('#result').innerHTML = `
+		<h1>El numero secreto es ${numeroSecreto}</h1>
+		<h1>${numeroJugadorResultado()}</h1>
+		<h1 class='w-[30%] rounded-lg ${color}'>${resultado()}</h1>`;
+	}
 }
