@@ -65,8 +65,6 @@ function numeroJugadorResultado(){
 			var r = "El numero que ingreso el jugador es incorrecto"
 			return r
 		case "Ganaste":
-			var r = `El numero Jugador del es ${recibir()}`
-			return r
 		case "Perdiste":
 			var r = `El numero Jugador del es ${recibir()}`
 			return r
