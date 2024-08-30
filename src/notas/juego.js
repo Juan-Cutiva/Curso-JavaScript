@@ -40,16 +40,34 @@ function resultado() {
 	}
 }
 
-function numeroJugadorResultado() {
-	if (resultado() === 'Debes ingresar un numero, no letras o símbolos') {
-		const r = 'El numero que ingreso el jugador es incorrecto';
-		return r;
-	} else if (resultado() === 'Solo se pueden ingresar numero entre el 0 y el 10, vuelve a intentar, Perdiste') {
-		const r = 'El numero que ingreso el jugador es incorrecto';
-		return r;
-	} else if (resultado() === 'Ganaste' || resultado() === 'Perdiste') {
-		const r = `El numero Jugador del es ${recibir()}`;
-		return r;
+// function numeroJugadorResultado() {
+// 	if (resultado() === 'Debes ingresar un numero, no letras o símbolos') {
+// 		const r = 'El numero que ingreso el jugador es incorrecto';
+// 		return r;
+// 	} else if (resultado() === 'Solo se pueden ingresar numero entre el 0 y el 10, vuelve a intentar, Perdiste') {
+// 		const r = 'El numero que ingreso el jugador es incorrecto';
+// 		return r;
+// 	} else if (resultado() === 'Ganaste' || resultado() === 'Perdiste') {
+// 		const r = `El numero Jugador del es ${recibir()}`;
+// 		return r;
+// 	}
+// }
+
+function numeroJugadorResultado(){
+	var result = resultado()
+	switch(result){
+		case "Debes ingresar un numero, no letras o símbolos":
+			var r = "El numero que ingreso el jugador es incorrecto"
+			return r
+		case "Solo se pueden ingresar numero entre el 0 y el 10, vuelve a intentar, Perdiste":
+			var r = "El numero que ingreso el jugador es incorrecto"
+			return r
+		case "Ganaste":
+			var r = `El numero Jugador del es ${recibir()}`
+			return r
+		case "Perdiste":
+			var r = `El numero Jugador del es ${recibir()}`
+			return r
 	}
 }
 
