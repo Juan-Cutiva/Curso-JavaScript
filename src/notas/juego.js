@@ -31,7 +31,7 @@ function resultado() {
 			const r = 'Perdiste';
 			return r;
 		}
-	} else if (recibir() <= 0 || recibir() >= 10) {
+	} else if (recibir() < 0 || recibir() > 10) {
 		const r = 'Solo se pueden ingresar numero entre el 0 y el 10, vuelve a intentar, Perdiste';
 		return r;
 	} else {
