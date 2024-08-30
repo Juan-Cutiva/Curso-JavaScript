@@ -53,6 +53,9 @@ function resultado() {
 // 	}
 // }
 
+
+// La función de abajo funciona igual que la de arriba, la diferencia es que una se hizo con IF, ELSE IF, y el otro con Switch
+
 function numeroJugadorResultado(){
 	switch(resultado()){
 		case "Debes ingresar un numero, no letras o símbolos":
