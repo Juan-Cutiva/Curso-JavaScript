@@ -1,0 +1,32 @@
+---
+import Header from "../components/Header.astro"
+import Layout from "../layouts/Layout.astro"
+---
+
+<Header/>
+<Layout>
+    <div class="text-xl text-gray-100">
+        <ul>
+            <li><span>For loop:</span> Usado cuando conoces el número de iteraciones.</li>
+            <hr>
+            <li><span>While loop:</span> Usado cuando quieres repetir mientras una condición sea verdadera.</li>
+            <hr>
+            <li><span>Do...while loop:</span> Similar al while loop, pero se ejecuta al menos una vez.</li>
+            <hr>
+            <li><span>For...in loop:</span> Usado para iterar sobre propiedades enumerables de un objeto.</li>
+            <hr>
+            <li><span>For...of loop:</span> Usado para iterar sobre elementos de objetos iterables.</li>
+            <hr>
+        </ul>
+    </div>
+</Layout>
+
+<style>
+    hr{
+        margin-bottom: 1rem;
+    }
+    span{
+        font-weight: bold;
+        color: #f2acac;
+    }
+</style>
