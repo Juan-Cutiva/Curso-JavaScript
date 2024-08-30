@@ -54,8 +54,7 @@ function resultado() {
 // }
 
 function numeroJugadorResultado(){
-	var result = resultado()
-	switch(result){
+	switch(resultado()){
 		case "Debes ingresar un numero, no letras o símbolos":
 			var r = "El numero que ingreso el jugador es incorrecto"
 			return r
