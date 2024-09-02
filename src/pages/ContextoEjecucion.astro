@@ -1,0 +1,85 @@
+---
+import Header from '../components/Header.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Header />
+<Layout>
+	<main class="mt-8 w-[95vw] text-pretty text-lg text-gray-100">
+		<h1 class="relative bottom-3 text-2xl font-semibold text-sky-600">Contextos de Ejecución</h1>
+		<div>
+			<p class="mb-4">
+				En JavaScript, los contextos de ejecución y la scope chain son conceptos fundamentales que
+				permiten comprender cómo se ejecuta el código y cómo se accede a las variables.
+			</p>
+			<h2 class="text-xl font-semibold text-sky-600">Contexto de ejecución:</h2>
+			<p class="mb-4">
+				Un contexto de ejecución es un entorno en el que se ejecuta el código JavaScript. Contiene
+				información sobre el código que se está ejecutando, como las variables declaradas, las
+				funciones y el objeto global. Cada vez que se invoca una función, se crea un nuevo contexto
+				de ejecución.
+			</p>
+			<h2 class="text-xl font-semibold text-sky-600">Scope Chain:</h2>
+			<p class="mb-4">
+				La scope chain es el mecanismo que utiliza JavaScript para determinar qué variables están
+				disponibles para una instrucción en particular. Se busca en una secuencia de contextos de
+				ejecución hasta encontrar la variable con el nombre correspondiente.
+			</p>
+		</div>
+		<h2 class="text-xl font-semibold text-sky-600">Pasos para la búsqueda en la scope chain:</h2>
+		<ol class="mb-4 list-decimal pl-[3.5%] sm:pl-[2.1%] md:pl-[1%]">
+			<li>
+				<p>
+					<span class="text-xl font-semibold text-sky-600">Objeto de activación actual:</span> Se busca
+					la variable en el objeto de activación del contexto de ejecución actual.
+				</p>
+			</li>
+			<li>
+				<p>
+					<span class="text-xl font-semibold text-sky-600">Entorno externo:</span> Si no se encuentra
+					la variable en el objeto de activación actual, se busca en el entorno externo, es decir, en
+					el contexto de ejecución padre.
+				</p>
+			</li>
+			<li>
+				<p>
+					<span class="text-xl font-semibold text-sky-600">Repetición:</span> El proceso se repite hasta
+					encontrar la variable o llegar al objeto global.
+				</p>
+			</li>
+			<li>
+				<p>
+					<span class="text-xl font-semibold text-sky-600">Variable no definida:</span> Si no se encuentra
+					la variable en ningún contexto de ejecución, se genera un error de referencia. (Que eso fue
+					justo lo que sucedió en el ejemplo final de la clase)
+				</p>
+			</li>
+		</ol>
+
+		<h2 class="text-xl font-semibold text-sky-600">Conclusiones</h2>
+		<ul class="list-disc pl-[3.5%] sm:pl-[2.1%] md:pl-[1%]">
+			<li>
+				Los contextos de ejecución y la scope chain son conceptos esenciales para comprender el
+				funcionamiento del código JavaScript.
+			</li>
+			<li>
+				Los contextos de ejecución definen el entorno en el que se ejecuta el código, mientras que
+				la scope chain determina qué variables están disponibles para una instrucción en particular.
+			</li>
+			<li>
+				La comprensión de estos conceptos es fundamental para escribir código JavaScript claro,
+				organizado y libre de errores.
+			</li>
+		</ul>
+	</main>
+</Layout>
+
+<style>
+	hr {
+		margin-bottom: 1rem;
+	}
+	span {
+		font-weight: bold;
+		color: #f2acac;
+	}
+</style>
