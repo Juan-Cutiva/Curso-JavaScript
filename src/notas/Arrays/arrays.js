@@ -47,3 +47,32 @@ console.log(arrayMixto); /*[
                             [ 1, 2, 3 ],
                             { nombre: 'Juan', funcion: [Function: funcion] }
                         ] */
+
+// Propiedad Length
+const arrayLength = ['Manzana', 'Banano', 'Naranja'];
+const numeroDeFrutas = arrayLength.length;
+console.log(numeroDeFrutas); // 3
+
+// Mutabilidad
+const arrayMutabilidad = ['Manzana', 'Banano', 'Naranja'];
+arrayMutabilidad.push('Papaya');
+console.log(arrayMutabilidad); // [ 'Manzana', 'Banano', 'Naranja', 'Papaya' ]
+
+// Inmutabilidad
+const arrayInmutabilidad = ['Manzana', 'Banano', 'Naranja'];
+const agregarArray = arrayInmutabilidad.concat(['Limón', 'Kiwi']);
+console.log(agregarArray); // [ 'Manzana', 'Banano', 'Naranja', 'Limón', 'Kiwi' ]
+
+// Chequeo de un Array con Array.isArray()
+const arrayChequeo = ['Manzana', 'Banano', 'Naranja'];
+const isArray = Array.isArray(arrayChequeo)
+console.log(isArray) // true
+
+// Ejercicio practico: suma de todos los elementos en un Array
+const arraySuma = [1, 2, 3, 4, 5];
+let sum = 0
+
+for (let i = 0; i < arraySuma.length; i++) {
+	sum += arraySuma[i];
+}
+console.log(sum) // 15
