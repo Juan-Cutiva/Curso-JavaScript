@@ -17,11 +17,11 @@ class Perro extends Animal {
 		console.log(`${this.nombre} esta ladrando`);
 	}
 	correr() {
-		console.log(`${this.nombre} corre algre`);
+		console.log(`${this.nombre} corre alegre`);
 	}
 }
 const lucas = new Perro('Lucas', 'perro', 'french poodle');
-const gaia = new Perro('Gaia', 'perro', 'pastor aleman');
+const gaia = new Perro('Gaia', 'perro', 'pastor alemán');
 lucas.correr(); // Lucas corre alegre
 gaia.emitirSonido(); // Gaia esta ladrando
 console.log(lucas); /*  Perro {
@@ -37,7 +37,7 @@ console.log(lucas); /*  Perro {
 console.log(gaia); /*   Perro {
                             nombre: 'Gaia',
                             tipo: 'perro',
-                            raza: 'pastor aleman',
+                            raza: 'pastor alemán',
                             __proto__: {
                                 constructor: ƒ Perro(),
                                 emitirSonido: ƒ emitirSonido(),
