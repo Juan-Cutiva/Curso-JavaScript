@@ -1,7 +1,7 @@
 const usersDatabase = [
-	{ username: 'andres', password: '123' },
-	{ username: 'caro', password: '456' },
-	{ username: 'mariana', password: '789' }
+	{ username: 'andres', password: 123 },
+	{ username: 'caro', password: 456 },
+	{ username: 'mariana', password: 789 }
 ];
 const usersTimeline = [
 	{ username: 'Estefany', timeline: 'Me encanta Javascript!' },
@@ -16,7 +16,7 @@ botonEnviar.addEventListener('click', ejecutar);
 function ejecutar() {
 	username();
 	password();
-	print();
+	usuarioExistente(username(), password())
 }
 
 function username() {
@@ -28,19 +28,32 @@ function password() {
 	return Number(password);
 }
 
-function print() {
-	if (username() === '' || password() === 0 ||'' ) {
-		document.querySelector('#text').innerHTML = `
-    <h1 class="text-red-600">Ingresa tu Usuario y Contraseña completos</h1>
-    `;
-	} else if ((password() !== Number(password())) === true) {
-		document.querySelector('#text').innerHTML = `
-        <h1 class="text-red-600">Solo se pueden ingresar numeros en la Contraseña</h1>
-        `;
-	} else if (username() === username() && password() === password()) {
-		document.querySelector('#text').innerHTML = `
-    <h1 class="text-green-600">Tu username es ${username()}</h1>
-    <h1 class="text-green-600">Tu password es ${password()}</h1>
-    `;
+
+function usuarioExistente(username, password){
+	for (let i = 0; i < usersDatabase.length; i++) {
+		if(usersDatabase[i].username === username && usersDatabase[i].password === password){
+			document.querySelector('#text').innerHTML = `
+				<h1 class="text-green-600">Tu username es ${username}</h1>
+				<h1 class="text-green-600">Tu password es ${password}</h1>`;
+			break;
+		}
+		else if (username === '' || password === 0 || ''){
+			document.querySelector('#text').innerHTML = `
+			<h1 class="text-red-600">Ingresa tu Usuario y Contraseña completos</h1>`;
+			break;
+		}
+		else if ((password !== Number(password)) === true){
+			document.querySelector('#text').innerHTML = `
+			<h1 class="text-red-600">Solo se pueden ingresar numeros en la Contraseña</h1>`;
+		}
+		else if(usersDatabase[i].username === username && usersDatabase[i].password !== password){
+			document.querySelector('#text').innerHTML = `
+			<h1 class="text-red-600">El usuario o la contraseña son incorrectos</h1>`;
+			break;
+		}
+		else if(usersDatabase[i].username !== username && usersDatabase[i].password !== password){
+			document.querySelector('#text').innerHTML = `
+			<h1 class="text-red-600">Usuario no existe</h1>`;
+		}
 	}
 }
