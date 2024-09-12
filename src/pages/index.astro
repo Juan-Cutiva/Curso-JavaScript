@@ -3,7 +3,7 @@ import Cart from "../components/Cart.astro"
 import Header from "../components/Header.astro"
 import Layout from "../layouts/Layout.astro"
 const textOne ="En este juego tienes que escoger un numero random, y si elijes el mismo numero que la PC el cual es aleatorio, Ganas!!!"
-const textTwo = "Este es una prueba de una mini red social"
+const textTwo = "Este valida si un usuario y contraseña son correctos al hacer un LogIn"
 ---
 
 <Layout title="🏠Home">
@@ -11,7 +11,7 @@ const textTwo = "Este es una prueba de una mini red social"
     <main class="flex size-full mt-10 w-screen  justify-center font-bold text-gray-100 text-center">
         <section class=" flex justify-center mt-32">
             <Cart srcA="/juego" src="https://i.postimg.cc/7hXmrD0v/one.png" alt="img juego 0-10" p1="Juego 0-10" p2={textOne}/>  
-            <Cart srcA="/redSocial" src="https://www.nippon.com/es/ncommon/contents/japan-topics/2483195/2483195.jpg" alt="img juego 0-10" p1="Red Social" p2={textTwo}/>             
+            <Cart srcA="/redSocial" src="https://i.postimg.cc/hPCD5fX1/two.png" alt="LogIn" p1="LogIn" p2={textTwo}/>             
         </section>
     </main>
 </Layout>
