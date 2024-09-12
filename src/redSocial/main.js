@@ -27,7 +27,6 @@ function password() {
 	var password = document.getElementById('password').value;
 	return Number(password);
 }
-console.log(recibir());
 
 function print() {
 	if (username() === '' || password() === 0 ||'' ) {
