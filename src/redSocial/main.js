@@ -13,13 +13,13 @@ const usersTimeline = [
 var botonEnviar = document.getElementById('botonEnviar');
 botonEnviar.addEventListener('click', ejecutar);
 
-var resultUser = ''
+var resultUser = '';
 
 function ejecutar() {
 	username();
 	password();
-	usuarioExistente(username(), password())
-	timeLine()
+	timeLine();
+	usuarioExistente(username(), password(), resultUser);
 }
 
 function username() {
@@ -31,43 +31,45 @@ function password() {
 	return Number(password);
 }
 
-
-function usuarioExistente(username, password){
+function usuarioExistente(username, password, resultUser) {
 	for (let i = 0; i < usersDatabase.length; i++) {
-		const gender = usersDatabase[i].gender === 'male' ? 'Bienvenido' : '' || usersDatabase[i].gender === 'female' ? 'Bienvenida' : ''
-		if(usersDatabase[i].username === username && usersDatabase[i].password === password){
+		const gender =
+			usersDatabase[i].gender === 'male'
+				? 'Bienvenido'
+				: '' || usersDatabase[i].gender === 'female'
+					? 'Bienvenida'
+					: '';
+		if (usersDatabase[i].username === username && usersDatabase[i].password === password) {
 			document.querySelector('#text').innerHTML = `
 				<h1 class="text-green-600">${gender} ${username}</h1>
-				<h1 class="text-green-600">${timeLine}</h1>`;
+				<h1 class="text-green-600">${resultUser}</h1>`;
 			break;
-		}
-		else if (username === '' || password === 0 || ''){
+		} else if (username === '' || password === 0 || '') {
 			document.querySelector('#text').innerHTML = `
 			<h1 class="text-red-600">Ingresa tu Usuario y Contraseña completos</h1>`;
 			break;
-		}
-		else if ((password !== Number(password)) === true){
+		} else if ((password !== Number(password)) === true) {
 			document.querySelector('#text').innerHTML = `
 			<h1 class="text-red-600">Solo se pueden ingresar numeros en la Contraseña</h1>`;
-		}
-		else if(usersDatabase[i].username === username && usersDatabase[i].password !== password){
+		} else if (usersDatabase[i].username === username && usersDatabase[i].password !== password) {
 			document.querySelector('#text').innerHTML = `
 			<h1 class="text-red-600">El usuario o la contraseña son incorrectos</h1>`;
 			break;
-		}
-		else if(usersDatabase[i].username !== username && usersDatabase[i].password !== password){
+		} else if (usersDatabase[i].username !== username && usersDatabase[i].password !== password) {
 			document.querySelector('#text').innerHTML = `
 			<h1 class="text-red-600">Usuario no existe</h1>`;
 		}
-	} return username
+	}
+	return username;
 }
 
-function timeLine(){
+function timeLine() {
 	for (let i = 0; i < usersTimeline.length; i++) {
 		const element = usersTimeline[i].username.toLowerCase();
-		if (element == usuarioExistente(username(), password()).toLowerCase()){
-			console.log('a');
-			return usersTimeline[i].timeline
+		if (element === usuarioExistente(username(), password()).toLowerCase()) {
+			return (resultUser = usersTimeline[i].timeline);
+		} else if (element !== usuarioExistente(username(), password()).toLowerCase()) {
+			resultUser = 'Ten un buen dia';
 		}
 	}
 }
