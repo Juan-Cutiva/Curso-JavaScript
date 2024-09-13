@@ -1,23 +1,3 @@
-// function fetchData(){
-//     fetch('https://rickandmortyapi.com/api/character')
-//     .then(response => response.json())
-//     .then(data => console.log(data))
-//     .catch(error => console.error('Error:', error));
-// }
-// fetchData();
-
-// async function fetchData(){
-//     try{
-//         let response = await fetch('https://rickandmortyapi.com/api/character');
-//         let data = await response.json();
-//         let morty = data.results[1].name
-//         console.log(data);
-//         return resultadoMorty = morty
-//     }catch(error){
-//         console.error('Error:', error);
-//     }
-// }
-// fetchData()
 let resultadoNombres = null
 async function fetchData(){
     try{
