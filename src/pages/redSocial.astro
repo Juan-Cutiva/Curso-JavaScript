@@ -9,7 +9,7 @@ import Header from "../components/Header.astro"
         <h1 class="absolute top-10 text-sky-700 text-2xl">Inicio</h1>
         <div id="inputs" class="flex flex-col gap-2">
             <input type="text" name="texto" id="username" placeholder="Usuario" class="pl-2 w-48 rounded-2xl placeholder:text-gray-600 text-black"/>
-            <input type="password" name="texto" id="password" placeholder="Contraseña" class="pl-2 w-48 rounded-2xl placeholder:text-gray-600 text-black"/>
+            <input autocomplete="off" type="password" name="texto" id="password" placeholder="Contraseña" class="pl-2 w-48 rounded-2xl placeholder:text-gray-600 text-black"/><button type="button" id="buttonEye" class="absolute top-[7.4rem] left-[17.5rem]"><img src="/eye-off.svg" alt="eye" id="eye"></button>
         </div>
 		<button type="button" id="botonEnviar" class="w-[35%] h-7 bg-black pl-[0.125rem] relative top-4 rounded-2xl"> Ingresar </button>
 		<div id="text" class="absolute top-[12rem] text-center pl-[0.3rem]"></div>

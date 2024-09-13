@@ -2,8 +2,13 @@ import { usersDatabase, usersTimeline } from './usersDatabase';
 
 var botonEnviar = document.getElementById('botonEnviar');
 botonEnviar.addEventListener('click', ejecutar);
+var buttonEye = document.getElementById('buttonEye');
+var inputPassword = document.getElementById('password');
+buttonEye.addEventListener('click', seePassword);
+buttonEye.addEventListener('click', changeEye);
 
 var resultUser = '';
+const img = document.getElementById('eye');
 
 function ejecutar() {
 	username();
@@ -17,7 +22,7 @@ function username() {
 	return username;
 }
 function password() {
-	var password = document.getElementById('password').value;
+	var password = inputPassword.value;
 	return Number(password);
 }
 
@@ -62,4 +67,21 @@ function timeLine() {
 			resultUser = 'Ten un buen dia';
 		}
 	}
+}
+
+function seePassword() {
+	if (inputPassword.type == 'text') {
+		inputPassword.type = 'password';
+	} else if (inputPassword.type == 'password') {
+		inputPassword.type = 'text';
+	}
+}
+
+function changeEye(){
+	if(inputPassword.type == 'text'){
+		img.src = '/eye.svg';
+	}else if (inputPassword.type == 'password'){
+		img.scr = '/eye-off.svg';
+	}
+	console.log(inputPassword.type)
 }
