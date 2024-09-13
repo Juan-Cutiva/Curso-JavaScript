@@ -8,6 +8,7 @@ buttonEye.addEventListener('click', seePassword);
 buttonEye.addEventListener('click', changeEye);
 
 var resultUser = '';
+var validation
 const img = document.getElementById('eye');
 
 function ejecutar() {
@@ -15,6 +16,7 @@ function ejecutar() {
 	password();
 	timeLine();
 	usuarioExistente(username(), password(), resultUser);
+	validate();
 }
 
 function username() {
@@ -38,6 +40,7 @@ function usuarioExistente(username, password, resultUser) {
 			document.querySelector('#text').innerHTML = `
 				<h1 class="text-green-600">${gender} ${username}</h1>
 				<h1 class="text-green-600">${resultUser}</h1>`;
+				validation = true
 			break;
 		} else if (username === '' || password === 0 || '') {
 			document.querySelector('#text').innerHTML = `
@@ -56,6 +59,12 @@ function usuarioExistente(username, password, resultUser) {
 		}
 	}
 	return username;
+}
+
+function validate() {
+		if (validation === true) {
+			return console.log('Usuario existe');
+		}
 }
 
 function timeLine() {
@@ -77,10 +86,10 @@ function seePassword() {
 	}
 }
 
-function changeEye(){
-	if(inputPassword.type == 'text'){
+function changeEye() {
+	if (inputPassword.type == 'text') {
 		img.src = '/eye.svg';
-	}else if (inputPassword.type == 'password'){
+	} else if (inputPassword.type == 'password') {
 		img.src = '/eye-off.svg';
 	}
 }
