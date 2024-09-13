@@ -81,7 +81,6 @@ function changeEye(){
 	if(inputPassword.type == 'text'){
 		img.src = '/eye.svg';
 	}else if (inputPassword.type == 'password'){
-		img.scr = '/eye-off.svg';
+		img.src = '/eye-off.svg';
 	}
-	console.log(inputPassword.type)
 }
